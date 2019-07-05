@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import LogoDiv from './styles-logo';
 
-export default function Logo({ animate }) {
+export default function Logo(props) {
   return (
-    <LogoDiv animate={animate} >
+    <LogoDiv {...props}>
       <div>
         <div></div>
         <div></div>
@@ -16,7 +15,3 @@ export default function Logo({ animate }) {
     </LogoDiv>
   );
 }
-
-Logo.propTypes = {
-  animate: PropTypes.bool.isRequired
-};

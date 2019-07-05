@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { appear, shouldAnimate } from '../styles';
+import { themeWhite } from '../styles-theme-colors';
 
 const borderAppear = keyframes`
   to {
@@ -27,11 +28,11 @@ export default styled.div`
       bottom: 0;
 
       &:nth-of-type(odd) {
-        border-top: 50px solid white;
+        border-top: 50px solid ${themeWhite};
       }
 
       &:nth-of-type(even) {
-        border-left: 50px solid white;
+        border-left: 50px solid ${themeWhite};
       }
 
       &:nth-child(1) {
