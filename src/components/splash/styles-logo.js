@@ -10,7 +10,7 @@ const borderAppear = keyframes`
 `;
 
 export default styled.div`
-  height: 475px;
+  height: 420px;
   display: flex;
   justify-content: center;
   align-items: center;
