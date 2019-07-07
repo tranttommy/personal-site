@@ -30,6 +30,7 @@ export const GlobalStyle = createGlobalStyle`
   *, *::after, *::before {
     box-sizing: border-box;
   }
+
   @font-face {
     font-family: Corbel;
     src: url(${corbel});
@@ -40,19 +41,21 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// Splash Page
-export const SplashMain = styled.main`
+export const Main = styled.main`
   height: 100vh;
   background: linear-gradient(135deg, ${themeBlue} 20%, ${themeGray} 45% 55%, ${themeBlue} 80%);
   background-size: 1000%;
   animation: ${movingGradient} ease-in 15s infinite;
+  overflow: hidden;
+`;
 
+// Splash Page
+export const SplashSection = styled.section`
+  height: inherit;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
-
-  overflow: hidden;
+  align-items: center;
 
   h1 {
     font-family: Corbel;
@@ -78,6 +81,7 @@ export const SplashMain = styled.main`
     justify-content: center;
 
   }
+
   ul {
     height: 150px;
     display: flex;
@@ -143,17 +147,30 @@ export const Nav = styled.nav`
   top: 0;
   width: 100%;
   height: 40px;
-  background: ${themeBlack};
-  border-bottom: 1px solid ${themeOrange};
+  background-color: ${transparentBlack};
   color: ${themeWhite};
-  transition: .25s ease-in;
-  
+
   ul {
     height: inherit;
     width: inherit;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    
+    li {
+      flex-grow: 1;
+      flex-basis: 200px;
+      height: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: .25s ease-in;
+
+      &:hover {
+        background-color: ${themeBlack};
+        font-size: 1.2rem;
+      }
+    }
   }
 `;
 
@@ -161,12 +178,4 @@ export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   font-family: Comfortaa;
   color: ${themeWhite};
-`;
-
-// Pages
-export const PageMain = styled.main`
-  height: 100vh;
-  background: linear-gradient(135deg, ${themeBlue} 20%, ${themeGray} 45% 55%, ${themeBlue} 80%);
-  background-size: 1000%;
-  animation: ${movingGradient} ease-in 15s infinite;
 `;

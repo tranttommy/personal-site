@@ -8,16 +8,19 @@ import Splash from '../pages/Splash';
 import About from '../pages/About';
 import Projects from '../pages/Projects';
 import Contact from '../pages/Contact';
+import { Main } from './styles';
 
 export default function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/about" component={About} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/" component={Splash} />
-      </Switch>
+      <Main>
+        <Switch>
+          <Route path="/about" component={About} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/" component={Splash} />
+        </Switch>
+      </Main>
     </Router>
   );
 }

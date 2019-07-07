@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { SplashMain, SplashLink } from '../components/styles';
+import { SplashSection, SplashLink } from '../components/styles';
 import Logo from '../components/splash/logo';
 
 export default class Splash extends PureComponent {
@@ -11,7 +11,7 @@ export default class Splash extends PureComponent {
 
   render() {
     return (
-      <SplashMain onClick={this.finishAnimation} {...this.state}>
+      <SplashSection onClick={this.finishAnimation} {...this.state}>
         <Logo {...this.state} />
         <h1><span>TOMMY</span> <span>TRAN</span></h1>
         <nav>
@@ -33,7 +33,7 @@ export default class Splash extends PureComponent {
             </li>
           </ul>
         </nav>
-      </SplashMain>
+      </SplashSection>
     );
   }
 }
