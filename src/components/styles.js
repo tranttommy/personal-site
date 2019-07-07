@@ -43,7 +43,6 @@ export const GlobalStyle = createGlobalStyle`
 // Splash Page
 export const SplashMain = styled.main`
   height: 100vh;
-  position: relative;
   background: linear-gradient(135deg, ${themeBlue} 20%, ${themeGray} 45% 55%, ${themeBlue} 80%);
   background-size: 1000%;
   animation: ${movingGradient} ease-in 15s infinite;
@@ -140,12 +139,15 @@ export const SplashLink = styled(Link)`
 
 // NavBar
 export const Nav = styled.nav`
-  height: 100px;
-  width: 100vw;
-  background: ${themeBlue};
-  border-bottom: 2px solid ${themeOrange};
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background: ${themeBlack};
+  border-bottom: 1px solid ${themeOrange};
   color: ${themeWhite};
-
+  transition: .25s ease-in;
+  
   ul {
     height: inherit;
     width: inherit;
@@ -163,6 +165,8 @@ export const StyledNavLink = styled(NavLink)`
 
 // Pages
 export const PageMain = styled.main`
-  height: calc(100vh - 100px);
-  background-color: ${themeBlack};
+  height: 100vh;
+  background: linear-gradient(135deg, ${themeBlue} 20%, ${themeGray} 45% 55%, ${themeBlue} 80%);
+  background-size: 1000%;
+  animation: ${movingGradient} ease-in 15s infinite;
 `;
