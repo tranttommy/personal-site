@@ -16,11 +16,6 @@ export default function NavBar() {
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/techstack">
-            Tech Stack
-          </StyledNavLink>
-        </li>
-        <li>
           <StyledNavLink to="/projects">
             Projects
           </StyledNavLink>
