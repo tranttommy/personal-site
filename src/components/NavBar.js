@@ -1,36 +1,36 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Nav, StyledNavLink } from './styles';
 
 export default function NavBar() {
   return (
-    <nav>
+    <Nav>
       <ul>
         <li>
-          <NavLink to="/">
+          <StyledNavLink to="/">
             Home
-          </NavLink>
+          </StyledNavLink>
         </li>
         <li>
-          <NavLink to="/about">
+          <StyledNavLink to="/about">
             About
-          </NavLink>
+          </StyledNavLink>
         </li>
         <li>
-          <NavLink to="/techstack">
+          <StyledNavLink to="/techstack">
             Tech Stack
-          </NavLink>
+          </StyledNavLink>
         </li>
         <li>
-          <NavLink to="/projects">
+          <StyledNavLink to="/projects">
             Projects
-          </NavLink>
+          </StyledNavLink>
         </li>
         <li>
-          <NavLink to="/contact">
+          <StyledNavLink to="/contact">
             Contact
-          </NavLink>
+          </StyledNavLink>
         </li>
       </ul>
-    </nav>
+    </Nav>
   );
 }

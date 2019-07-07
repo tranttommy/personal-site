@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { SplashMain, TechSpan, StackSpan, ProjectsSpan, ContactSpan, AboutSpan, SplashLink } from '../components/styles';
+import { SplashMain, SplashLink } from '../components/styles';
 import Logo from '../components/splash/logo';
 
 export default class Splash extends PureComponent {
@@ -18,22 +18,17 @@ export default class Splash extends PureComponent {
           <ul>
             <li>
               <SplashLink to="/about">
-                <AboutSpan {...this.state}>About</AboutSpan>
-              </SplashLink>
-            </li>
-            <li>
-              <SplashLink to="/techstack">
-                <TechSpan {...this.state}>Tech</TechSpan> <StackSpan {...this.state}>Stack</StackSpan>
+                About
               </SplashLink>
             </li>
             <li>
               <SplashLink to="/projects">
-                <ProjectsSpan {...this.state}>Projects</ProjectsSpan>
+                Projects
               </SplashLink>
             </li>
             <li>
               <SplashLink to="/contact">
-                <ContactSpan {...this.state}>Contact</ContactSpan>
+                Contact
               </SplashLink>
             </li>
           </ul>
