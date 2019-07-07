@@ -11,7 +11,7 @@ const borderAppear = keyframes`
 
 export default styled.div`
   padding: 50px;
-  border: 10px solid transparent;
+  border: 15px solid transparent;
   display: flex;
   justify-content: center;
   align-items: center;

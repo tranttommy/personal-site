@@ -12,6 +12,17 @@ export const appear = keyframes`
   }
 `;
 
+const setDown = keyframes`
+  66% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+`;
+
 const movingGradient = keyframes`
   to {
     background-position: bottom right;
@@ -55,7 +66,9 @@ export const SplashMain = styled.main`
     letter-spacing: .5rem;
     color: ${themeOrange};
     opacity: 0;
-    animation: ${appear} ease ${shouldAnimate('1.5s')} forwards;
+    transform: scale(1.1);
+    animation: ${setDown} linear ${shouldAnimate('3s')} forwards;
+
     span {
       display: inline-block;
 
@@ -79,51 +92,51 @@ export const SplashMain = styled.main`
       opacity: 0;
 
       &:nth-child(1) {
-        animation: ${appear} ease ${shouldAnimate('2s 3.25s')} forwards;
+        animation: ${appear} ease ${shouldAnimate('.95s 2.05s')} forwards;
       }
       
       &:nth-child(2) {
-        animation: ${appear} ease ${shouldAnimate('2s 3.50s')} forwards;
+        animation: ${appear} ease ${shouldAnimate('.8s 2.2s')} forwards;
       }
       
       &:nth-child(3) {
-        animation: ${appear} ease ${shouldAnimate('2s 3.75s')} forwards;
+        animation: ${appear} ease ${shouldAnimate('.65s 2.35s')} forwards;
       }
     
       &:nth-child(4) {
-        animation: ${appear} ease ${shouldAnimate('2s 4s')} forwards;
+        animation: ${appear} ease ${shouldAnimate('.5s 2.5s')} forwards;
       }
     }
   }
 `;
 export const AboutSpan = styled.span`
   display: inline-block;
-  transform: translateY(100px) rotateY(90deg);
-  animation: ${appear} linear ${shouldAnimate('.5s 3.25s')} forwards;
+  transform: translateY(100px) rotateX(-90deg) scale(2);
+  animation: ${appear} linear ${shouldAnimate('.5s 2.05s')} forwards;
 `;
 
 export const TechSpan = styled.span`
   display: inline-block;
-  transform: translateX(-100px) skew(90deg);
-  animation: ${appear} linear ${shouldAnimate('.5s 3.50s')} forwards;
+  transform: translate(-71px, 71px) rotateX(-45deg) scale(2);
+  animation: ${appear} linear ${shouldAnimate('.5s 2.2s')} forwards;
 `;
 
 export const StackSpan = styled.span`
   display: inline-block;
-  transform: translateX(100px) skew(-90deg);
-  animation: ${appear} linear ${shouldAnimate('.5s 3.50s')} forwards;
+  transform: translate(71px, 71px) rotateX(-45deg) scale(2);
+  animation: ${appear} linear ${shouldAnimate('.5s 2.2s')} forwards;
 `;
 
 export const ProjectsSpan = styled.span`
   display: inline-block;
-  transform: scale(0);
-  animation: ${appear} linear ${shouldAnimate('.5s 3.75s')} forwards;
+  transform: translateY(100px) rotateX(-90deg) scale(2);
+  animation: ${appear} linear ${shouldAnimate('.5s 2.35s')} forwards;
 `;
 
 export const ContactSpan = styled.span`
   display: inline-block;
-  transform: skew(90deg) rotateZ(45deg);
-  animation: ${appear} linear ${shouldAnimate('.5s 4.00s')} forwards;
+  transform: translateY(100px) rotateX(-90deg) scale(2);
+  animation: ${appear} linear ${shouldAnimate('.5s 2.5s')} forwards;
 `;
 
 export const SplashLink = styled(Link)`
@@ -142,5 +155,10 @@ export const SplashLink = styled(Link)`
     box-shadow: 0 0 2px .5em ${transparentBlack};
     font-size: 1.8rem;
     letter-spacing: .05em;
+  }
+
+  &:active {
+    background-color: black;
+    box-shadow: 0 0 2px .5em black;
   }
 `;
