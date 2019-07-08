@@ -147,7 +147,7 @@ export const StyledNavLink = styled(NavLink).attrs({
   justify-content: center;
   align-items: center;
   width: 20vw;
-  max-width: 12rem;
+  max-width: 15rem;
   padding: .25em 0;
   margin: .25em;
   color: ${themeWhite};
