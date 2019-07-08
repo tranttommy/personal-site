@@ -1,18 +1,13 @@
-import styled, { createGlobalStyle, keyframes } from 'styled-components';
+import styled, { createGlobalStyle, keyframes, css } from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 import reset from 'react-style-reset/string';
 import corbel from '../../assets/corbel.ttf';
 import comfortaa from '../../assets/Comfortaa_Regular.ttf';
 import { themeBlue, themeGray, themeWhite, transparentBlack, themeOrange, themeBlack } from './styles-theme-colors';
 
-export const fadeIn = keyframes`
+export const appear = keyframes`
   to {
-    opacity: 1
-  }
-`;
-
-export const untransform = keyframes`
-  to {
+    opacity: 1;
     transform: none;
   }
 `;
@@ -23,7 +18,9 @@ const movingGradient = keyframes`
   }
 `;
 
-export const shouldAnimate = (timing) => props => props.animate ? timing : '0s 0s';
+export const shouldAnimate = (keyframe, timing) => props => css`
+  animation: ${keyframe} ease-in ${props.animate ? timing : '0s 0s'} forwards;
+`;
 
 export const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -65,12 +62,12 @@ export const SplashSection = styled.section`
     color: ${themeOrange};
 
     opacity: 0;
-    animation: ${fadeIn} ease-in ${shouldAnimate('2s')} forwards;
-    
+    ${shouldAnimate(appear, '2s')}
+
     span {
       display: inline-block;
 
-      &::first-letter {
+        &::first-letter {
         font-size: 3.5rem;
       }
     }
@@ -79,105 +76,100 @@ export const SplashSection = styled.section`
   nav {
     display: flex;
     justify-content: center;
-
   }
 
   ul {
     height: 150px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    
+    justify-content: center;
+    align-items: center;
+
     li {
       opacity: 0;
       transform-origin: top;
-      transform: translateY(50px) scale(1.5);
+      transform: translateY(50px) scale(1.2);
 
       &:nth-child(1) {
-        animation: 
-          ${fadeIn} ease-in ${shouldAnimate('.5s 2s')} forwards,
-          ${untransform} ease-in ${shouldAnimate('.5s 2s')} forwards
-        ;
+        ${shouldAnimate(appear, '.5s 2s')};
       }
-      
+        
       &:nth-child(2) {
-        animation: 
-          ${fadeIn} ease-in ${shouldAnimate('.5s 2.25s')} forwards,
-          ${untransform} ease-in ${shouldAnimate('.5s 2.25s')} forwards
-        ;
+        ${shouldAnimate(appear, '.5s 2.25s')};
       }
-      
+        
       &:nth-child(3) {
-        animation: 
-          ${fadeIn} ease-in ${shouldAnimate('.5s 2.5s')} forwards,
-          ${untransform} ease-in ${shouldAnimate('.5s 2.5s')} forwards
-        ;
+        ${shouldAnimate(appear, '.5s 2.5s')};
       }
     }
   }
 `;
 
-export const SplashLink = styled(Link)`
+// NavBar
+export const Nav = styled.nav`
+  ul {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      opacity: 0;
+      transform-origin: top;
+      transform: translateY(-50px) scale(1.2);
+
+      &:nth-child(1) {
+        ${shouldAnimate(appear, '.5s')};
+      }
+        
+      &:nth-child(2) {
+        ${shouldAnimate(appear, '.5s .1s')};
+      }
+        
+      &:nth-child(3) {
+        ${shouldAnimate(appear, '.5s .2s')};
+      }
+
+      &:nth-child(4) {
+        ${shouldAnimate(appear, '.5s .3s')};
+      }
+    }
+  }
+`;
+
+const activeClassName = 'active';
+export const StyledNavLink = styled(NavLink).attrs({
+  activeClassName,
+  exact: true
+})`
   text-decoration: none;
-  display: block;
-  color: ${themeWhite};
-  width: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  max-width: 12rem;
   padding: .25em 0;
-  text-align: center;
+  margin: .25em;
+  color: ${themeWhite};
   font-family: Comfortaa;
   font-size: 1.4rem;
   border-radius: .25em;
-  transition: linear .25s;
-  
+  transition: ease-in .25s;
+
   &:hover {
     background-color: ${transparentBlack};
     box-shadow: 0 0 2px .25em ${transparentBlack};
     font-size: 1.8rem;
   }
 
-  &:active {
-    background-color: ${themeBlack};
-    box-shadow: 0 0 1px .25em ${themeBlack};
-  }
-`;
+  &.${activeClassName} {
+    color: ${themeOrange};
+    font-size: 1.8rem;
+    cursor: default;
 
-// NavBar
-export const Nav = styled.nav`
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 40px;
-  /* background-color: ${transparentBlack}; */
-  color: ${themeWhite};
-
-  ul {
-    height: inherit;
-    width: inherit;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    
-    li {
-      flex-grow: 1;
-      flex-basis: 200px;
-      height: inherit;
-      transition: .25s ease-in;
-
-      &:hover {
-        background-color: ${transparentBlack};
-        font-size: 1.2rem;
-      }
+    &:hover {
+      background-color: transparent;
+      box-shadow: none;
     }
   }
-`;
-
-export const StyledNavLink = styled(NavLink)`
-  text-decoration: none;
-  height: 100%;
-  width: 100%;
-  font-family: Comfortaa;
-  color: ${themeWhite};
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
