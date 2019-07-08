@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import reset from 'react-style-reset/string';
 import corbel from '../../assets/corbel.ttf';
 import comfortaa from '../../assets/Comfortaa_Regular.ttf';
-import { themeBlue, themeGray, themeWhite, transparentBlack, themeOrange, themeBlack } from './styles-theme-colors';
+import { themeBlue, themeGray, themeWhite, transparentBlack, themeOrange, themeBlack, transparentWhite } from './styles-theme-colors';
 import { movingGradient, appear, shouldAnimate } from './style-helpers';
 
 
@@ -29,6 +29,9 @@ export const Main = styled.main`
   background-size: 1000%;
   animation: ${movingGradient} ease-in 15s infinite;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 // Splash Page
@@ -67,7 +70,7 @@ export const SplashSection = styled.section`
 
       li {
         opacity: 0;
-        transform-origin: top;
+        transform-origin: bottom;
         transform: translateY(50px) scale(1.2);
 
         &:nth-child(1) {
@@ -149,5 +152,29 @@ export const StyledNavLink = styled(NavLink).attrs({
     color: ${themeOrange};
     font-size: 1.8rem;
     pointer-events: none;
+  }
+`;
+
+// About
+export const AboutSection = styled.section`
+  min-width: 60vw;
+  max-width: 25em;
+  margin: 5%;
+  padding: 3%;
+  background-color: ${transparentWhite};
+  border-radius: .25em;
+  box-shadow: 0 0 2px .25em ${transparentWhite};
+  opacity: 0;
+  transform: scale(${1 / 1.2});
+  ${shouldAnimate(appear, '.5s .5s')};
+  
+  p {
+    color: black; 
+    font-family: Corbel;
+    text-align: justify;
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: scale(1.2);
+    ${shouldAnimate(appear, '.5s .5s')}
   }
 `;
