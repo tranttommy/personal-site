@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
-import { shouldAnimate, appear } from '../styles';
-import { themeWhite } from '../styles-theme-colors';
+import { shouldAnimate, appear } from './style-helpers';
+import { themeWhite } from './styles-theme-colors';
 
 const Logo = ({ className }) => (
   <div className={className}>

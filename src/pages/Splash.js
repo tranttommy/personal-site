@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { SplashSection, StyledNavLink } from '../components/styles';
-import Logo from '../components/splash/Logo';
+import Logo from '../components/Logo';
 
 export default class Splash extends PureComponent {
   state = {

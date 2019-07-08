@@ -1,26 +1,11 @@
-import styled, { createGlobalStyle, keyframes, css } from 'styled-components';
-import { Link, NavLink } from 'react-router-dom';
+import styled, { createGlobalStyle } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import reset from 'react-style-reset/string';
 import corbel from '../../assets/corbel.ttf';
 import comfortaa from '../../assets/Comfortaa_Regular.ttf';
 import { themeBlue, themeGray, themeWhite, transparentBlack, themeOrange, themeBlack } from './styles-theme-colors';
+import { movingGradient, appear, shouldAnimate } from './style-helpers';
 
-export const appear = keyframes`
-  to {
-    opacity: 1;
-    transform: none;
-  }
-`;
-
-const movingGradient = keyframes`
-  to {
-    background-position: bottom right;
-  }
-`;
-
-export const shouldAnimate = (keyframe, timing) => props => css`
-  animation: ${keyframe} ease-in ${props.animate ? timing : '0s 0s'} forwards;
-`;
 
 export const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -60,7 +45,6 @@ export const SplashSection = styled.section`
     font-size: 3rem;
     letter-spacing: .5rem;
     color: ${themeOrange};
-
     opacity: 0;
     ${shouldAnimate(appear, '2s')}
 
@@ -74,32 +58,29 @@ export const SplashSection = styled.section`
   }
 
   nav {
-    display: flex;
-    justify-content: center;
-  }
+    ul {
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-  ul {
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+      li {
+        opacity: 0;
+        transform-origin: top;
+        transform: translateY(50px) scale(1.2);
 
-    li {
-      opacity: 0;
-      transform-origin: top;
-      transform: translateY(50px) scale(1.2);
-
-      &:nth-child(1) {
-        ${shouldAnimate(appear, '.5s 2s')};
-      }
-        
-      &:nth-child(2) {
-        ${shouldAnimate(appear, '.5s 2.25s')};
-      }
-        
-      &:nth-child(3) {
-        ${shouldAnimate(appear, '.5s 2.5s')};
+        &:nth-child(1) {
+          ${shouldAnimate(appear, '.5s 2s')};
+        }
+          
+        &:nth-child(2) {
+          ${shouldAnimate(appear, '.5s 2.25s')};
+        }
+          
+        &:nth-child(3) {
+          ${shouldAnimate(appear, '.5s 2.5s')};
+        }
       }
     }
   }
@@ -137,6 +118,7 @@ export const Nav = styled.nav`
   }
 `;
 
+// Links
 const activeClassName = 'active';
 export const StyledNavLink = styled(NavLink).attrs({
   activeClassName,
@@ -146,6 +128,7 @@ export const StyledNavLink = styled(NavLink).attrs({
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 12rem;
   width: 20vw;
   max-width: 15rem;
   padding: .25em 0;
