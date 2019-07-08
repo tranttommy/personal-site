@@ -165,11 +165,6 @@ export const StyledNavLink = styled(NavLink).attrs({
   &.${activeClassName} {
     color: ${themeOrange};
     font-size: 1.8rem;
-    cursor: default;
-
-    &:hover {
-      background-color: transparent;
-      box-shadow: none;
-    }
+    pointer-events: none;
   }
 `;
