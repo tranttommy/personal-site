@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
-import { fadeIn, shouldAnimate, untransform } from '../styles';
+import { shouldAnimate, appear } from '../styles';
 import { themeWhite } from '../styles-theme-colors';
 
 const Logo = ({ className }) => (
@@ -42,7 +42,7 @@ export default styled(Logo)`
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: ${borderAppear} ease-in ${shouldAnimate('1s 2s')} forwards;
+    ${shouldAnimate(borderAppear, '1s 2s')};
 
     > div {
       position: relative;
@@ -67,10 +67,7 @@ export default styled(Logo)`
           height: 350px;
           transform: translateX(250px);
           opacity: 0;
-          animation:
-            ${fadeIn} ease-in ${shouldAnimate('1s')} forwards,
-            ${untransform} ease-in ${shouldAnimate('1s')} forwards
-          ;
+          ${shouldAnimate(appear, '1s')};
         }
 
         &:nth-child(2) {
@@ -78,10 +75,7 @@ export default styled(Logo)`
           height: 300px;
           transform: translateY(250px);
           opacity: 0;
-          animation:
-            ${fadeIn} ease-in ${shouldAnimate('1s .25s')} forwards,
-            ${untransform} ease-in ${shouldAnimate('1s .25s')} forwards
-          ;
+          ${shouldAnimate(appear, '1s .25s')};
         }
 
         &:nth-child(3) {
@@ -89,10 +83,7 @@ export default styled(Logo)`
           height: 250px;
           transform: translateX(250px);
           opacity: 0;
-          animation:
-            ${fadeIn} ease-in ${shouldAnimate('1s .45s')} forwards,
-            ${untransform} ease-in ${shouldAnimate('1s .45s')} forwards
-          ;
+          ${shouldAnimate(appear, '1s .45s')};
         }
 
         &:nth-child(4) {
@@ -100,10 +91,7 @@ export default styled(Logo)`
           height: 200px;
           transform: translateY(250px);
           opacity: 0;
-          animation:
-            ${fadeIn} ease-in ${shouldAnimate('1s .60s')} forwards,
-            ${untransform} ease-in ${shouldAnimate('1s .60s')} forwards
-          ;
+          ${shouldAnimate(appear, '1s .60s')};
         }
 
         &:nth-child(5) {
@@ -111,10 +99,7 @@ export default styled(Logo)`
           height: 150px;
           transform: translateX(250px);
           opacity: 0;
-          animation:
-            ${fadeIn} ease-in ${shouldAnimate('1s .70s')} forwards,
-            ${untransform} ease-in ${shouldAnimate('1s .70s')} forwards
-          ;
+          ${shouldAnimate(appear, '1s .70s')};
         }
 
         &:nth-child(6) {
@@ -122,10 +107,7 @@ export default styled(Logo)`
           height: 100px;
           transform: translateY(250px);
           opacity: 0;
-          animation:
-            ${fadeIn} ease-in ${shouldAnimate('1s .75s')} forwards,
-            ${untransform} ease-in ${shouldAnimate('1s .75s')} forwards
-          ;
+          ${shouldAnimate(appear, '1s .75s')};
         }
       }
     }

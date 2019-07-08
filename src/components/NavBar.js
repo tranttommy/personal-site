@@ -3,7 +3,7 @@ import { Nav, StyledNavLink } from './styles';
 
 export default function NavBar() {
   return (
-    <Nav>
+    <Nav animate={true}>
       <ul>
         <li>
           <StyledNavLink to="/">
