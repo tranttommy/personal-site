@@ -147,7 +147,7 @@ export const Nav = styled.nav`
   top: 0;
   width: 100%;
   height: 40px;
-  background-color: ${transparentBlack};
+  /* background-color: ${transparentBlack}; */
   color: ${themeWhite};
 
   ul {
@@ -161,13 +161,10 @@ export const Nav = styled.nav`
       flex-grow: 1;
       flex-basis: 200px;
       height: inherit;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       transition: .25s ease-in;
 
       &:hover {
-        background-color: ${themeBlack};
+        background-color: ${transparentBlack};
         font-size: 1.2rem;
       }
     }
@@ -176,6 +173,11 @@ export const Nav = styled.nav`
 
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
+  height: 100%;
+  width: 100%;
   font-family: Comfortaa;
   color: ${themeWhite};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
