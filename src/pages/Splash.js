@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { SplashSection, SplashLink } from '../components/styles';
+import { SplashSection, SplashLink, StyledNavLink } from '../components/styles';
 import Logo from '../components/splash/logo';
 
 export default class Splash extends PureComponent {
@@ -17,19 +17,19 @@ export default class Splash extends PureComponent {
         <nav>
           <ul>
             <li>
-              <SplashLink to="/about">
+              <StyledNavLink to="/about">
                 About
-              </SplashLink>
+              </StyledNavLink>
             </li>
             <li>
-              <SplashLink to="/projects">
+              <StyledNavLink to="/projects">
                 Projects
-              </SplashLink>
+              </StyledNavLink>
             </li>
             <li>
-              <SplashLink to="/contact">
+              <StyledNavLink to="/contact">
                 Contact
-              </SplashLink>
+              </StyledNavLink>
             </li>
           </ul>
         </nav>

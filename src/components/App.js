@@ -4,16 +4,18 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
+import { Main } from './styles';
+import NavBar from './NavBar';
 import Splash from '../pages/Splash';
 import About from '../pages/About';
 import Projects from '../pages/Projects';
 import Contact from '../pages/Contact';
-import { Main } from './styles';
 
 export default function App() {
   return (
     <Router>
       <Main>
+        <Route path="/:all" component={NavBar} />
         <Switch>
           <Route path="/about" component={About} />
           <Route path="/projects" component={Projects} />

@@ -1,11 +1,8 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
+import Logo from '../components/splash/Logo';
 
 export default function About() {
   return (
-    <>
-      <NavBar />
-      <h1>About</h1>
-    </>
+    <Logo animate={true}/>
   );
 }
