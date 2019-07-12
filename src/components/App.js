@@ -14,15 +14,21 @@ import Contact from '../pages/Contact';
 export default function App() {
   return (
     <Router>
-      <Main>
-        <Route path="/:all" component={NavBar} />
-        <Switch>
-          <Route path="/about" component={About} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/" component={Splash} />
-        </Switch>
-      </Main>
+      <Switch>
+        <Route path="/:any" render={() => (
+          <>
+            <NavBar />
+            <Main>
+              <Switch>
+                <Route path="/about" component={About} />
+                <Route path="/projects" component={Projects} />
+                <Route path="/contact" component={Contact} />
+              </Switch>
+            </Main>
+          </>
+        )} />
+        <Route path="/" component={Splash} />
+      </Switch>
     </Router>
   );
 }
