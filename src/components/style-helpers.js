@@ -13,6 +13,6 @@ export const appear = keyframes`
   }
 `;
 
-export const shouldAnimate = (keyframe, timing) => props => css`
+export const shouldAnimate = (keyframe, timing) => (props = { animate: true }) => css`
   animation: ${keyframe} ease-in ${props.animate ? timing : '0s 0s'} forwards;
 `;
