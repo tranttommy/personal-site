@@ -6,7 +6,6 @@ import comfortaa from '../../assets/Comfortaa_Regular.ttf';
 import { themeBlue, themeGray, themeWhite, transparentBlack, themeOrange, themeBlack, transparentWhite } from './styles-theme-colors';
 import { movingGradient, appear, shouldAnimate } from './style-helpers';
 
-
 export const GlobalStyle = createGlobalStyle`
   ${reset};
   *, *::after, *::before {
@@ -178,40 +177,101 @@ export const StyledNavLink = styled(NavLink).attrs({
 export const H2 = styled.h2`
   color: ${themeBlue};
   font-size: 1.5rem;
-  font-weight: bold;
   font-family: Comfortaa;
+  font-weight: bold;
   position: relative;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  margin: 15px;
+  text-align: center;
 
-  &::before, &::after {
-    content: '';
-    transition: .25s ease-in;
-    display: block;
-    height: 3px;
-    background-color: ${themeBlack};
-    width: 0;
-  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
 
-  &::after {
-    align-self: flex-end;
-  }
-
-  &:hover {
-    &::before, &::after {
-      width: 100%;
-    }
-    &::before {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      display: block;
+      height: 2px;
+      background-color: ${themeBlack};
+      transition: ease-in .25s;
+      width: 0;
       align-self: flex-end;
     }
-    &::after {
+
+    &:hover::after {
+      width: 100%;
       align-self: flex-start;
     }
   }
+`;
 
-  a {
-    color: ${themeBlue};
-    text-decoration: none;
+export const ProjectsUl = styled.ul`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-evenly;
+  
+  li {
+    width: 25vw;
+    height: 75%;
+    border-radius: .25em;
+    overflow: hidden;
+    background-color: ${transparentBlack};
+
+    &, div img, h2, p {
+      transition: ease-in .25s;
+    }
+
+    &:hover {
+      background-color: ${themeOrange};
+      transform: scale(1.1);
+
+      h2 {
+        color: ${themeBlue};
+      }
+
+      p {
+        color: ${themeBlack};
+      }
+      div img {
+        transform: scale(1.1);
+      }
+    }
+
+    div {
+      height: 40%;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        transform-origin: top;
+      }
+    }
+
+    h2 {
+      color: ${themeOrange};
+    }
+
+    p {
+      &:nth-of-type(1) {
+        font-style: italic;
+        font-weight: bold;
+      }
+
+      font-family: Corbel;
+      color: ${themeWhite};
+      margin: 5%;
+      font-size: 1.2rem;
+    }
   }
 `;
