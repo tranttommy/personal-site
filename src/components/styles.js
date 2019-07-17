@@ -195,10 +195,10 @@ export const H2 = styled.h2`
     &::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: -10px;
       display: block;
       height: 2px;
-      background-color: ${themeBlack};
+      background-color: ${themeBlue};
       transition: ease-in .25s;
       width: 0;
       align-self: flex-end;
@@ -211,7 +211,9 @@ export const H2 = styled.h2`
   }
 `;
 
-export const ProjectsUl = styled.ul`
+export const ProjectsUl = styled.ul.attrs({
+  animate: true
+})`
   height: 100%;
   width: 100%;
   display: flex;
@@ -226,6 +228,21 @@ export const ProjectsUl = styled.ul`
     border-radius: .25em;
     overflow: hidden;
     background-color: ${transparentBlack};
+    opacity: 0;
+    transform-origin: top;
+    transform: scale(.5);
+
+    &:nth-child(1) {
+      ${shouldAnimate(appear, '.5s .4s')};
+    }
+
+    &:nth-child(2) {
+      ${shouldAnimate(appear, '.5s .5s')};
+    }
+
+    &:nth-child(3) {
+      ${shouldAnimate(appear, '.5s .6s')};
+    }
 
     &, div img, h2, p {
       transition: ease-in .25s;
@@ -233,7 +250,6 @@ export const ProjectsUl = styled.ul`
 
     &:hover {
       background-color: ${themeOrange};
-      transform: scale(1.1);
 
       h2 {
         color: ${themeBlue};
@@ -242,6 +258,7 @@ export const ProjectsUl = styled.ul`
       p {
         color: ${themeBlack};
       }
+
       div img {
         transform: scale(1.1);
       }
