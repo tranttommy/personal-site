@@ -244,24 +244,8 @@ export const ProjectsUl = styled.ul.attrs({
       ${shouldAnimate(appear, '.5s .6s')};
     }
 
-    &, div img, h2, p {
+    &, div img, h2, p, p a {
       transition: ease-in .25s;
-    }
-
-    &:hover {
-      background-color: ${themeOrange};
-
-      h2 {
-        color: ${themeBlue};
-      }
-
-      p {
-        color: ${themeBlack};
-      }
-
-      div img {
-        transform: scale(1.1);
-      }
     }
 
     div {
@@ -285,10 +269,39 @@ export const ProjectsUl = styled.ul.attrs({
         font-weight: bold;
       }
 
+      &:nth-of-type(3) {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        a {
+          color: ${themeWhite};
+        }
+      }
+
       font-family: Corbel;
       color: ${themeWhite};
       margin: 5%;
       font-size: 1.2rem;
+    }
+
+    &:hover {
+      background-color: ${themeOrange};
+
+      h2 {
+        color: ${themeBlue};
+      }
+
+      p {
+        color: ${themeBlack};
+        a {
+          color: ${themeBlack};
+        }
+      }
+
+      div img {
+        transform: scale(1.1);
+      }
     }
   }
 `;

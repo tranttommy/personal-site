@@ -4,7 +4,6 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import { Main } from './styles';
 import NavBar from './NavBar';
 import Splash from '../pages/Splash';
 import About from '../pages/About';
