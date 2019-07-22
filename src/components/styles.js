@@ -305,3 +305,63 @@ export const ProjectsUl = styled.ul.attrs({
     }
   }
 `;
+
+export const ContactUl = styled.ul.attrs({
+  animate: true
+})`
+  height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  opacity: 0;
+  ${shouldAnimate(appear, '.5s .4s')};
+
+  li {
+    opacity: 0;
+    transform-origin: top;
+    transform: translateY(-50px) scale(1.2);
+
+    &:nth-child(1) {
+      ${shouldAnimate(appear, '.5s .4s')};
+    }
+      
+    &:nth-child(2) {
+      ${shouldAnimate(appear, '.5s .5s')};
+    }
+      
+    &:nth-child(3) {
+      ${shouldAnimate(appear, '.5s .6s')};
+    }
+
+    &:nth-child(4) {
+      ${shouldAnimate(appear, '.5s .7s')};
+    }
+
+    h2 {
+      color: ${themeWhite};
+
+      &, a {
+        transition: ease-in .25s;
+      }
+
+      a {
+        color: inherit;
+
+        &::after {
+          background-color: ${themeWhite};
+        }
+      }
+
+      &:hover {
+        color: ${themeOrange};
+        a {
+          color: inherit;
+
+          &::after {
+            background: ${themeOrange};
+          }
+        }
+      }
+    }
+  }
+`;
