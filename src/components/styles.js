@@ -33,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const Main = styled.main.attrs({
+export const AboutMain = styled.main.attrs({
   animate: true
 })`
   height: calc(100vh - 160px);
@@ -43,10 +43,19 @@ export const Main = styled.main.attrs({
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   opacity: 0;
   transform-origin: top;
   transform: rotateX(45deg);
   ${shouldAnimate(appear, '.5s .4s')};
+
+  p {
+    width: 40%;
+    font-family: Corbel;
+    font-size: 1.6rem;
+    text-align: justify;
+    line-height: 2rem;
+  }
 `;
 
 // Splash Page
