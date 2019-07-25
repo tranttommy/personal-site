@@ -3,6 +3,7 @@ import { H2, ProjectsUl } from '../components/styles';
 import megaNap from '../../assets/meganap-screenshot.png';
 import tacoMountain from '../../assets/taco-mountain-screenshot.png';
 import verseParse from '../../assets/verse-parse-screenshot.png';
+import reactPokedex from '../../assets/react-pokedex-screenshot.png';
 
 
 export default function Projects() {
@@ -56,6 +57,22 @@ export default function Projects() {
         <p>
           GitHub:
           <a href="https://github.com/heartfart-panda/verse-parse" target="_blank" rel="noopener noreferrer">Client</a>
+        </p>
+      </li>
+      <li>
+        <div>
+          <img src={reactPokedex} />
+        </div>
+        <H2>
+          <a href="https://reactpokedex.netlify.com" target="_blank" rel="noopener noreferrer">React Pokedex</a>
+        </H2>
+        <p>React, Redux</p>
+        <p>
+          React Pokedex is a front-end app that uses a Pokemon API. A user can enter a search query, view paged results, and go on to a Pokemon’s detail page to view, post and remove comments.
+        </p>
+        <p>
+          GitHub:
+          <a href="https://github.com/tranttommy/redux-quiz" target="_blank" rel="noopener noreferrer">Client</a>
         </p>
       </li>
     </ProjectsUl>

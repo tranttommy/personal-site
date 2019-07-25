@@ -232,7 +232,7 @@ export const ProjectsUl = styled.ul.attrs({
   align-content: space-evenly;
   
   li {
-    width: 25vw;
+    width: 20vw;
     height: 75%;
     border-radius: .25em;
     overflow: hidden;
@@ -251,6 +251,10 @@ export const ProjectsUl = styled.ul.attrs({
 
     &:nth-child(3) {
       ${shouldAnimate(appear, '.5s .6s')};
+    }
+
+    &:nth-child(4) {
+      ${shouldAnimate(appear, '.5s .7s')};
     }
 
     &, div img, h2, p, p a {
